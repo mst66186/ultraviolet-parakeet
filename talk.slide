@@ -38,8 +38,6 @@ Out of scope for this talk
 * Basic Auth Example
 Client side code doesn't need to do anything
 
-.code client/src/app/basic/basic.js /\.controller/,/\}\]\)/
-
 .link http://localhost:8888/basic
 
 * Token Auth
@@ -58,33 +56,21 @@ Login only when all else fails
 * Token Auth Example (controller)
 Optimistically try to obtain resource
 
-.code client/src/app/token/token.js /\.controller/,/\}\]\)/
-
 .link http://localhost:8888
 
 * Token Auth (injector)
 Decorate every outgoing request with auth token
 
-.code client/src/app/app.js /injector/,/\}\]\)/
-
 * Token Auth (interceptor)
 Intercept authentication errors
-
-.code client/src/app/token/token.js /\.responseInterceptors/,/\};/
 
 * Token Auth (response interceptor)
 Make sure they're the right errors and refresh
 
-.code client/src/app/token/token.js /401/,/\}$/
-
 * Token Auth (refresh failed)
-
-.code client/src/app/token/token.js /start refreshFailed/,/end refreshFailed/
 
 * Token Auth (login)
 Login if required
-
-.code client/src/app/login/login.js /\.controller/,/\}\]\)/
 
 * OAuth
 Same injector
@@ -97,16 +83,10 @@ Token returned by callback
 Login is pretty similar *BUT* you have to handle the redirect and callback
 Make sure your callback is HTTPS
 
-.code client/src/app/oauth-login/oauth-login.js /\.controller/,/\}\]\)/
-
 * OAuth (callback routing)
 Handling the routing for callbacks can be tricky
 
-.code client/src/app/oauth-login/oauth-login.js /oauthCallback/,/\}\);/
-
 * OAuth (callback controller)
-
-.code client/src/app/oauth-login/oauth-login.js /\.controller.*OAuthCallbackCtrl/,/\}\]\)/
 
 * Summary
 Inject Authorization header
